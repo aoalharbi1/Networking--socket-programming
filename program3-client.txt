@@ -1,0 +1,37 @@
+Abdullah O Alharbi
+CS 360 01
+Design Sketch: program3-client
+
+
+Program Requirements:
+
+The client sends an operation code(opcode) and c-string to the server.  The opcode 
+describes how the server should modify the string. The server modifies the string and then 
+returns it to the client where it is displayed.  The server has no command line input and 
+no console output.  The server must terminate when it receives SIGTERM. The client has one 
+command line input, the name of the machine where the server is running.The  client  must 
+have  a  basic  interface  that  prompts  the  user  for  the  desired action and the string.
+You must include an exit menu command in the client interface
+
+Program Inputs:
+
+The client will receive an input from command line that is the address of the server. It is also
+going to receive two inputs from the user which are the choice from the menu and their message.
+
+Program Outputs:
+
+The client is going to display a menu of operations to do on the string which the user inputs. Additionally,
+it will output the string after the server modifies it.
+
+Test Plan:
+
+Run the server then test if the client connects to it.
+After the client is connected to the server, test if the string is modified correctly.
+Test with a string that is longer than 128 characters to see if the client and the server 
+detects the error.
+
+Solution Overview:
+
+Ask the user to choose one of the operation from a menu. Then, ask the user to enter
+the message. Then, send it to the server which performs the operation specified in the 
+opcode of the packet. Finally, the server sends back a packet and the client displays it.
